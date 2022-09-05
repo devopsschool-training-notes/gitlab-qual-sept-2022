@@ -1,2 +1,32 @@
-IP - 43.204.140.253
-Username - ubuntu
+PLAN -> CODE -> ANALYZE -> BUILD -> UT -> PACK -> Archive -> Dep2QA -> AT -> CC 
+================================================================================
+
+										JENKINS
+---------------------------
+Maven
+		Local -------> Maven Central (RO)
+						Nexus
+						Artifactory
+						Archiva
+						AWS S3
+
+
+43.205.68.188
+ubuntu
+============================
+Install Gitlab EE On linux - Centos7
+----------------------------------
+https://www.devopsschool.com/blog/gitlab-tutorials-install-self-managed-gitlab-enterprise-version-in-centos-7/
+
+
+sudo EXTERNAL_URL="https://ec2-43-205-68-188.ap-south-1.compute.amazonaws.com" yum install -y gitlab-ee
+
+
+root
+RzuHPj1aGB2nQ9xSQUrbn+4t0Hx6fNspAHpV/VQv/4A=
+
+
+https://www.devopsschool.com/blog/gitlab-tutorials-gitlab-installation-environment-variables/
+
+
+https://www.devopsschool.com/blog/gitlab-tutorials-gitlab-ctl-commands-reference-example/
