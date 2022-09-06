@@ -1,3 +1,17 @@
+http://43.205.228.212/
+root
+password@57A
+
+TOEKN
+GR1348941E8SiHivqucSMFLpNadzm
+
+
+sudo gitlab-runner register --url http://43.205.228.212/ --registration-token GR1348941E8SiHivqucSMFLpNadzm
+
+Enter an executor: docker, ssh, docker+machine, kubernetes, custom, docker-ssh, parallels, shell, virtualbox, docker-ssh+machine:
+
+
+
 https://about.gitlab.com/free-trial/
 
 Satyavarapu Bharath		13.234.186.116
@@ -47,7 +61,7 @@ https://ec2-43-205-68-188.ap-south-1.compute.amazonaws.com/
 How to add runner into this?
 
 
-curl --request POST -k "https://URL/api/v4/runners" --form "token=TOKEN" --form "description=test-1-20150125-test" --form "tag_list=ruby,mysql,tag1,tag2"
+curl --request POST -k "https:///api/v4/runners" --form "token=TOKEN" --form "description=test-1-20150125-test" --form "tag_list=ruby,mysql,tag1,tag2"
 
 curl --request POST -k "https://URL/api/v4/runners" --form "token=TOEKN"
 
@@ -87,5 +101,33 @@ curl --request POST -k "https://gitlab.example.com/api/v4/runners" \
      --form "token=<registration_token>" --form "description=test-1-20150125-test" \
      --form "tag_list=ruby,mysql,tag1,tag2"
 ====================================================
+
+COMMANDS:
+     exec                  execute a build locally
+     list                  List all configured runners
+     run                   run multi runner service
+     register              register a new runner
+     reset-token           reset a runner's token
+     install               install service
+     uninstall             uninstall service
+     start                 start service
+     stop                  stop service
+     restart               restart service
+     status                get status of a service
+     run-single            start single runner
+     unregister            unregister specific runner
+     verify                verify all registered runners
+     artifacts-downloader  download and extract build artifacts (internal)
+     artifacts-uploader    create and upload build artifacts (internal)
+     cache-archiver        create and upload cache artifacts (internal)
+     cache-extractor       download and extract cache artifacts (internal)
+     cache-init            changed permissions for cache paths (internal)
+     health-check          check health for a specific address
+     read-logs             reads job logs from a file, used by kubernetes executor (internal)
+     help, h               Shows a list of commands or help for one command
+
+
+
+sudo gitlab-runner register --url http://43.205.228.212/ --registration-token GR1348941E8SiHivqucSMFLpNadzm
 
 
