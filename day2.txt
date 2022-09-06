@@ -1,15 +1,28 @@
+https://about.gitlab.com/free-trial/
+
 Satyavarapu Bharath		13.234.186.116
 Asish Panda				65.0.31.221
 Srinivas Thotakura		43.205.242.34
 Madhu Kodumur			43.205.240.4
 Sourajit Sarkar			35.154.248.167
-Olympie Pureti			35.154.248.167
+Olympie Pureti			43.205.228.212
 Anil Moosaramtota		13.233.112.101
 
 password@57A
 
 Saikumar Ananthula		35.154.247.47
 Ansar 				43.205.177.124
+==========================================================
+GROUP
+	MSOffice
+		EPIC 
+			MSWORD		
+			MSSLIDE
+			MSEXCEL
+		MilesStone
+				BOLD
+				ITALIC
+				H1
+		Board
+		RoadMap
 
-
-https://about.gitlab.com/free-trial/
