@@ -1,4 +1,17 @@
 
+Write a code in gitlba cicd which would do following
+Stage 1 - Setup a tomcat and running
+Stage 2 - Call one Chef cookbook
+Stage 3 - Call one Shell Script which would do installing of jenkins
+
+
+=====================================
+
+
+
+
+
+
 https://docs.gitlab.com/ee/ci/quick_start/
 
 http://43.205.228.212/
@@ -91,8 +104,42 @@ test-job1:
     - echo "This job tests something"
 ======================================
 
+stages:
+  - build
+  - test
+  - package
+
+maven-build:
+  stage: build
+  script: "mvn package -B"
+
+maven-test:
+  stage: test
+  script: "mvn package -B"
+  artifacts:
+
+maven-package:
+  stage: package
+  script: "mvn package -B"
+  artifacts:
+    paths:
+      - target/*.jar
+================================================
 
 
+stages:
+  - chef-install
+
+chefdeploy:
+  stage: chef-install
+  script: "chef-client --local-mode --runlist 'recipe[web]'"
+
+
+
+
+
+
+=================================================
 
 build-job:
   stage: build
@@ -248,3 +295,6 @@ sudo gitlab-runner register \
   --run-untagged="true" \
   --locked="false" \
   --access-level="not_protected"
+
+
+sudo gitlab-runner register --url https://gitlab.com/ --registration-token GR1348941UfJM-JRSxHGd4JJR92Fc
