@@ -61,7 +61,36 @@ https://about.gitlab.com/blog/2020/12/10/basics-of-gitlab-ci-updated/
 https://docs.gitlab.com/ee/ci/pipelines/pipeline_architectures.html
 https://docs.gitlab.com/ee/ci/yaml/
 
+===========================
+build-job:
+  tags:
+  stage: build
+  script:
+    - echo "Hello, $GITLAB_USER_LOGIN!"
+
+test-job1:
+  tags:
+  stage: test
+  script:
+    - echo "This job tests something"
 ========================================
+build-job:
+  tags:
+    - dev
+    - rajesh
+  stage: build
+  script:
+    - echo "Hello, $GITLAB_USER_LOGIN!"
+
+test-job1:
+  tags:
+    - dev
+    - rajesh
+  stage: test
+  script:
+    - echo "This job tests something"
+======================================
+
 
 
 
@@ -89,13 +118,19 @@ deploy-prod:
     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
   environment: production
 
-
+=======================
 build-job:
+  tags:
+    - dev
+    - rajesh
   stage: build
   script:
     - echo "Hello, $GITLAB_USER_LOGIN!"
 
 test-job1:
+  tags:
+    - dev
+    - rajesh
   stage: test
   script:
     - echo "This job tests something"
@@ -110,6 +145,7 @@ test-job2:
     - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
     - echo "which simulates a test that runs 20 seconds longer than test-job1"
     - sleep 20
+==========================
 
 deploy-prod:
   stage: deploy
