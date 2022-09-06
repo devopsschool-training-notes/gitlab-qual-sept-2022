@@ -25,4 +25,67 @@ GROUP
 				H1
 		Board
 		RoadMap
+======================================================================
+Gitlab
+		1 
+Group	
+		1
+Project	
+		1
+
+
+43.205.68.188
+
+
+sudo /usr/local/bin/gitlab-runner register --url https://ec2-43-205-68-188.ap-south-1.compute.amazonaws.com/ --registration-token GR1348941Dj7erQsTJyxTfeyYey5E
+
+
+
+https://ec2-43-205-68-188.ap-south-1.compute.amazonaws.com/
+
+
+How to add runner into this?
+
+
+curl --request POST -k "https://URL/api/v4/runners" --form "token=TOKEN" --form "description=test-1-20150125-test" --form "tag_list=ruby,mysql,tag1,tag2"
+
+curl --request POST -k "https://URL/api/v4/runners" --form "token=TOEKN"
+
+
+
+=====================ERROR=============================================
+
+
+ERROR: Registering runner... failed                 runner=GR1348941Dj7erQsT status=couldn't execute POST against https://ec2-43-205-68-188.ap-south-1.compute.amazonaws.com/api/v4/runners: Post "https://ec2-43-205-68-188.ap-south-1.compute.amazonaws.com/api/v4/runners": x509: certificate relies on legacy Common Name field, use SANs instead
+PANIC: Failed to register the runner
+
+ 
+
+curl --request POST -k "https://ec2-43-205-68-188.ap-south-1.compute.amazonaws.com" --form "token=GR1348941Dj7erQsTJyxTfeyYey5E" --form "description=test-1-20150125-test" --form "tag_list=ruby,mysql,tag1,tag2" 
+
+
+curl --request POST -k "https://gitlab.example.com/api/v4/runners" \
+     --form "token=<registration_token>" --form "description=test-1-20150125-test" \
+     --form "tag_list=ruby,mysql,tag1,tag2"
+
+http://ec2-43-205-68-188.ap-south-1.compute.amazonaws.com/
+
+
+curl --request POST -k "https://ec2-43-205-68-188.ap-south-1.compute.amazonaws.com/api/v4/runners" --form "token=GR1348941Dj7erQsTJyxTfeyYey5E" --form "description=test-1-20150125-test" --form "tag_list=ruby,mysql,tag1,tag2"
+
+curl --request POST -k "https://gitlab.example.com/api/v4/runners" \
+     --form "token=<registration_token>" --form "description=test-1-20150125-test" \
+     --form "tag_list=ruby,mysql,tag1,tag2"
+
+curl --request POST -k "https://ec2-43-205-68-188.ap-south-1.compute.amazonaws.com/api/v4/runners" --form "token=GR1348941Dj7erQsTJyxTfeyYey5E"
+
+http://43.205.228.212/
+GR1348941E8SiHivqucSMFLpNadzm
+
+
+curl --request POST -k "https://gitlab.example.com/api/v4/runners" \
+     --form "token=<registration_token>" --form "description=test-1-20150125-test" \
+     --form "tag_list=ruby,mysql,tag1,tag2"
+====================================================
+
 
