@@ -1,0 +1,41 @@
+=============================================
+Certificates
+=============================================
+
+1. How to Update or correct or Generate cert and apply on gitlab server?
+===============================================
+1. Valid DNS name
+2. 
+https://www.devopsschool.com/blog/gitlab-tutorials-using-letsencrypt-with-gitlab-self-hosted-server/
+
+
+=============================================
+Adding Runner Docker
+=============================================
+https://www.devopsschool.com/blog/docker-installation-and-configurations/
+
+sudo gitlab-runner register --url https://gitlab.com/ --registration-token GR1348941UfJM-JRSxHGd4JJR92Fc
+
+
+image: busybox:latest
+
+
+build1:
+  stage: build
+  script:
+    - echo "Do your build here"
+
+=============================================
+Adding Runner in Container
+
+https://www.devopsschool.com/blog/gitlab-tutorials-how-to-setup-and-run-gitlab-runner-in-a-container/
+
+docker run -d --name gitlab-runner --restart always \
+  -v /srv/gitlab-runner/config:/etc/gitlab-runner \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  gitlab/gitlab-runner:latest
+
+docker run --rm -it -v /srv/gitlab-runner/config:/etc/gitlab-runner gitlab/gitlab-runner register
+
+GR1348941GDa_3zVp41htb2cQkKdx
+
