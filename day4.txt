@@ -1,3 +1,6 @@
+https://docs.gitlab.com/ee/raketasks/backup_gitlab.html
+
+
 Satyavarapu Bharath		15.206.172.230	
 Asish Panda				13.233.130.219		
 Srinivas Thotakura		65.0.101.135
@@ -8,3 +11,42 @@ Anil Moosaramtota		13.127.130.213
 Saikumar Ananthula		43.205.94.118		
 Ansar 					13.233.44.33	
 =========================================================
+
+
+include:
+  - template: Security/SAST.gitlab-ci.yml
+
+stages:
+  - test
+  - upload
+
+something:
+  stage: test
+  script:
+      - echo "in something"
+      - echo "this is something" > something.txt
+  artifacts:
+      paths: [something.txt]
+
+sast:
+  before_script:
+      - echo "hello from before sast"
+      - echo "this is in the file" > test.txt
+  artifacts:
+    reports:
+      sast: gl-sast-report.json
+    paths: [gl-sast-report.json, test.txt]
+
+send-reports:
+  stage: upload
+  dependencies:
+    - sast
+    - something
+  before_script:
+      - echo "This is the send-reports before_script"
+  script:
+    - echo "in send-reports job"
+    - ls
+  artifacts:
+      reports:
+          sast: gl-sast-report.json
